@@ -1,10 +1,19 @@
-version: "3.7"
 services:
-
   olx-monitor:
-    build: .
+    build: 
+      context: .
+      target: dev
+    image: olx-monitor:latest
     restart: unless-stopped
+    env_file: 
+      - ./src/.env
     volumes:
-      - ./src/config.js:/usr/app/config.js
-      - ./src/.env:/usr/app/.env
-      - ./data:/usr/data
+      - ./src/.env:/usr/src/app/src/.env
+      - ./src/config.js:/usr/src/app/src/config.js
+      - ./package-lock.json:/usr/src/app/package-lock.json
+      - ./package.json:/usr/src/app/package.json
+      - ./data/scrapper.log:/usr/src/app/data/scrapper.log
+    ports:
+      - 3000:3000
+    profiles:
+      - develop

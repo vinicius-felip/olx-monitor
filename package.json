@@ -14,10 +14,15 @@
     "sqlite3": "^5.1.6"
   },
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "build": {
+    "extraResources": [
+      "./data"
+    ]
+},
   "keywords": [
     "olx",
     "scrapper",
