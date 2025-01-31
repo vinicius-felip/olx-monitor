@@ -5,6 +5,7 @@ const $logger = require("./components/Logger")
 const { scraper } = require("./components/Scraper")
 const { createTables } = require("./database/database.js")
 
+
 const runScraper = async () => {
 
   for (let i = 0; i < config.urls.length; i++) {

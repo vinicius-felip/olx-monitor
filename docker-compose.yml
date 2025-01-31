@@ -12,7 +12,7 @@ services:
       - ./src/config.js:/usr/src/app/src/config.js
       - ./package-lock.json:/usr/src/app/package-lock.json
       - ./package.json:/usr/src/app/package.json
-      - ./data/scrapper.log:/usr/src/app/data/scrapper.log
+      - ./data:/usr/src/app/data
     ports:
       - 3000:3000
     profiles:
