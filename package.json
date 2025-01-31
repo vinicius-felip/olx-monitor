@@ -14,6 +14,8 @@
     "sqlite3": "^5.1.6"
   },
   "scripts": {
+    "run:build": "docker compose -f docker-compose.yml up olx-monitor --build",
+    "run": "docker compose -f docker-compose.yml up olx-monitor --build",
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
